@@ -98,3 +98,4 @@ while running:
 
 # Quit the game
 pygame.quit()
+print("hey")
