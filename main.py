@@ -38,7 +38,7 @@ for size in ship_sizes:
 
 hit_count = 0
 ships_sunk = 0
-
+totalclicks = 0 
 font = pygame.font.Font(None, 36)
 
 running = True
@@ -52,21 +52,22 @@ while running:
                 pos = pygame.mouse.get_pos()
                 col = (pos[0] - grid_padding) // tile_size
                 row = (pos[1] - grid_padding) // tile_size
-
-                if grid[row][col] == 1:
-                    hit_count += 1
-                    grid[row][col] = -1 
-                    print("KABOOM!")
+                try:
+                    if grid[row][col] == 1:
+                        hit_count += 1
+                        grid[row][col] = -1 
+                        totalclicks
+                        print("KABOOM!")
                     if hit_count == 20:
-                        ships_sunk = 6
-                        if ships_sunk == 6:
-                            running = False
-                            print("Congratulations! You sunk all the ships!")
-                     
-                elif grid[row][col] == 0:
-                    grid[row][col] = -2
-                    print("sploosh...")
-
+                            ships_sunk = 6
+                            if ships_sunk == 6:
+                                running = False
+                                print("Congratulations! You sunk all the ships!")
+                    elif grid[row][col] == 0:
+                        grid[row][col] = -2
+                        print("sploosh...")
+                except: 
+                    print("ERROR: That wasn't very splash kaboomy of you")
     screen.fill(BLUE)
 
     for row in range(grid_size):
