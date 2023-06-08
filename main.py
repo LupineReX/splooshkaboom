@@ -67,7 +67,7 @@ while running:
                         grid[row][col] = -2
                         print("sploosh...")
                 except: 
-                    print("ERROR: That wasn't very splash kaboomy of you")
+                    print("ERROR: Out Of Bounds. That wasn't very splash kaboomy of you")
     screen.fill(BLUE)
 
     for row in range(grid_size):
