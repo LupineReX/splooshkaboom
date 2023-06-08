@@ -2,23 +2,23 @@ import numpy as np
 import pygame
 import random
 
-pygame.init()
+pygame.init() #where the pygame grid starts 
 
-width, height = 820, 820
-screen = pygame.display.set_mode((width, height))
+width, height = 820, 820 #following 3 lines control the width and height of the pygame window and the name of the window 
+screen = pygame.display.set_mode((width, height)) 
 pygame.display.set_caption("SPLOOSH KABOOM")
 
-BLUE = (43, 101, 236)
+BLUE = (43, 101, 236) #these three colors are used to generate colors within the 20x20 grid
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
-grid_size = 20
+grid_size = 20 #controls grid size 
 tile_size = 40
 grid_padding = 10
 
 grid = np.zeros((grid_size, grid_size), dtype=int)
 
-ship_sizes = [4, 4, 4, 3, 3, 2]
+ship_sizes = [4, 4, 4, 3, 3, 2] #list of the amount of ships plus their varying sizes (three 4 tile ships, two three tile ships, and one 2 tile ship)
 
 for size in ship_sizes:
     valid = False
